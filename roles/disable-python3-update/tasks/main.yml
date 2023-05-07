@@ -1,0 +1,4 @@
+- name: disable python3 update
+  dpkg_selections:
+    name: python3
+    selection: hold

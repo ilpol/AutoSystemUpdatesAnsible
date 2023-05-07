@@ -1,0 +1,3 @@
+- name: restart OS
+  reboot:
+    reboot_timeout: 3600

@@ -1,0 +1,9 @@
+- name: configure system
+  hosts: all
+  become: yes
+  roles:
+    - disable-python3-update
+    - update-os
+    - delete-kernels-exept-2-newest
+    - restart-os
+

@@ -1,0 +1,9 @@
+- name: delete kernels exept 2 newest
+  shell: "dpkg --list | grep linux-image | awk '{ print $2 }' | sort -V -r | tail -n+3 | xargs sudo apt-get -y purge"
+  
+# dpkg --list - все установленные пакеты
+# grep linux-image - все образы
+# awk '{ print $2 }' - вторая колонка, обозначающая имя пакета
+# sort -V -r - сортировка по версии в обратном порядке
+# tail -n+3 - оставляет все версии за исключением первых двух
+# xargs sudo apt-get -y purge - удаление полученных ядер
